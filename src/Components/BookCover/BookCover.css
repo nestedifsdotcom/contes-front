@@ -1,0 +1,45 @@
+.book-cover-container {
+	--width: 120px;
+	--height: 130px;
+	--radius: 25px;
+
+	--card-padding: 10px;
+	--book-side-height: 20px;
+
+	border-radius: var(--radius);
+	width: var(--width);
+	background-color: black;
+}
+
+.book-cover-container:hover .book-cover {
+	transform: rotateX(90deg) translateZ(3px) scale(0.75);
+}
+
+.book-cover {
+	position: relative;
+	width: var(--width);
+	height: var(--height);
+	transform-style: preserve-3d;
+	transform-origin: 50% 40%;
+	transition: transform 0.7s ease-in-out;
+	z-index: 4;
+}
+
+.book-top {
+	position: absolute;
+	width: calc(100% - calc(var(--card-padding) * 2));
+	height: calc(100% - calc(var(--card-padding) * 2));
+	top: var(--card-padding);
+	left: var(--card-padding);
+	z-index: 5;
+	transform: translateZ(25px);
+}
+
+.book-side {
+	position: absolute;
+	bottom: 0;
+	left: var(--card-padding);
+	width: calc(100% - calc(var(--card-padding) * 2));
+	height: var(--book-side-height);
+	transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+}
